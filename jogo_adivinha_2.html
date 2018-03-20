@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<title>JOGO DO ADIVINHA UM NÚMERO &#9733</title>
+<script>
+
+    
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+  
+
+
+    var numeroPensado = Math.round(Math.random() * 10);
+
+    var tentativas=1;
+    
+    while( tentativas <= 3){
+
+
+        var chute = parseInt(prompt("Digite seu chute !!!"));
+
+        if(chute == numeroPensado){
+
+                document.write(" Você acertou  ... o número pensado é " + numeroPensado);
+                break;
+
+         }else{
+
+                document.write("Você errou  " );
+         }
+
+        tentativas++;
+    }
+
+    mostra("FIM");
+        
+</script>

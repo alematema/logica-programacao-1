@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script>
+	
+    /*
+    pulaLinhas = "<br><br><br>";
+	ano = new Date().getFullYear();
+
+	document.write("Flávio tem  " + (ano  - 1976) );
+    document.write(pulaLinhas);
+    document.write("Joaquim tem " + (ano - 1996));
+    document.write(pulaLinhas);
+    document.write("Barney tem " + (ano - 1976));
+*/
+
+
+    function pulaLinha() {
+        document.write("<br><br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write(texto);
+        pulaLinha();
+        
+    }
+  
+    ano = new Date().getFullYear();
+
+    mostra();
+
+    mostra( "Flávio tem  " + (ano  - 1976) );    
+    mostra( "Joaquim tem " + (ano - 1996)  );    
+    mostra( "Barney tem " + (ano - 1976)   );  
+
+
+
+</script>

@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+
+    var anoLimite = parseInt(prompt("Este programa mostra os anos em que teve copa do mundo, desde 1930 até um ano limite. Entre com o ano limite"));
+
+    var anoCopa = 1930;
+
+    var anoAtual = new Date().getFullYear();
+
+    if( anoLimite > anoAtual ) anoLimite = anoAtual;
+
+    while(anoCopa < anoLimite){
+
+        mostra("Teve copa em " + anoCopa );
+        anoCopa = anoCopa + 4;
+
+    }
+
+    
+
+    mostra("FIM");
+
+
+    
+    
+
+        
+</script>

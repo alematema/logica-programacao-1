@@ -1,0 +1,78 @@
+<meta charset="utf-8">
+<title>JOGO DO ADIVINHA UM NÚMERO &#9733</title>
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+  
+    function getArrowAndMessage(chute, numeroPensado){
+
+        if(chute < numeroPensado) return "o número está &#8613";else return "o número está &#8615";
+
+    }
+
+
+    function atualizaTitulo(novoTitulo){
+        document.title = novoTitulo;
+        mostra(novoTitulo);
+    }
+
+    function getNovoTitulo(numeroPensado){
+
+        var estrelas="";
+        for (var i = 0; i < numeroPensado; i++) {
+         
+            estrelas += "*";
+
+        }
+
+        return "JOGO DO ADIVINHA UM NÚMERO " + estrelas;
+
+    }
+
+    var numeroPensado = Math.round(Math.random() * 10);
+    console.log(numeroPensado);
+    console.log(getNovoTitulo(numeroPensado));
+
+
+   //atualizaTitulo(getNovoTitulo(numeroPensado));
+
+    var tentativas=1;
+    var chute;
+    while( tentativas <= 3){
+
+
+            chute = parseInt(prompt("Digite seu chute !!!"));
+
+            if(isNaN(chute)){
+            }else{
+
+
+                if(chute == numeroPensado){
+
+                    mostra(" Você acertou &#9786 ... " + "o número pensado é " + numeroPensado);
+
+                }else{
+
+                    mostra("Você errou &#9785 ... " + getArrowAndMessage(chute, numeroPensado));
+                }
+
+               
+            }
+
+            tentativas++;
+    }
+
+    mostra("FIM");
+        
+</script>

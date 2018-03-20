@@ -1,0 +1,127 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+
+    function mostra(texto,pularLinha){
+
+        if(texto == undefined) return;
+
+        if(pularLinha){
+
+            mostra(texto);
+
+        }else{
+
+            document.write("<big>"+texto+"</big>");
+
+        } 
+
+    }
+
+
+    function isImpar(numero){
+
+        return numero%2==1;
+
+    }
+
+    function imprimeOsParesNoIntervalo(inicio, fim){
+
+        if(inicio == fim) mostra("Não há nenhum número par nesse interalo !!!");
+
+        var elementosNaLinha=0;
+
+        var inicioIntervalo,fimIntervalo;
+
+        var imprimeEmOrdemCrescente;
+
+        if(inicio > fim){
+
+            inicioIntervalo = fim;
+            fimIntervalo = inicio;
+            imprimeEmOrdemCrescente = false;
+
+
+             
+
+             if(isImpar(fimIntervalo)){
+                fimIntervalo -= 1;
+             }
+
+
+        }else{
+
+            imprimeEmOrdemCrescente = true;
+            inicioIntervalo = inicio;
+            fimIntervalo = fim;
+
+
+            if(isImpar(inicioIntervalo)){
+                inicioIntervalo += 1;
+            }   
+
+        }
+
+
+        while(inicioIntervalo <= fimIntervalo){
+
+
+            if(imprimeEmOrdemCrescente) {
+                mostra(inicioIntervalo + ", ", false);
+            }else {
+                mostra(fimIntervalo + ", ", false);
+            } 
+
+            elementosNaLinha++;
+
+            if(elementosNaLinha == 10) {
+
+                pulaLinha();
+
+                elementosNaLinha = 0;
+            }
+
+            if(imprimeEmOrdemCrescente){
+
+                inicioIntervalo += 2;
+
+            }else{
+
+                fimIntervalo -= 2;
+
+            }
+                    
+
+        }
+
+        pulaLinha();
+
+    }
+
+    var inicio = parseInt(prompt("Este programa mostra os números pares dentro de um intervalo.     Informe o início do intervalo "));
+    var fim = parseInt(prompt("Informe o fim do intervalo "));
+    mostra("Os números pares de (" + inicio + " até " + fim + ") são" );
+    pulaLinha();
+
+    
+    imprimeOsParesNoIntervalo(inicio,fim);
+    
+    
+    mostra("FIM");
+
+    
+
+        
+</script>

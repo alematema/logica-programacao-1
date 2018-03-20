@@ -1,0 +1,61 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+/*
+    document.write("Flávio tem  " + ((new Date()).getFullYear()  - 1976) );
+    document.write("<br>");
+    document.write("Joaquim tem " + (2016 - 1996));
+    document.write("<br>");
+    document.write("Barney tem " + (2016 - 1976));
+*/
+
+
+/*  
+
+	ano = new Date().getFullYear();
+
+	document.write("Flávio tem  " + (ano  - 1976) );
+    document.write("<br>");
+    document.write("Joaquim tem " + (ano - 1996));
+    document.write("<br>");
+    document.write("Barney tem " + (ano - 1976));
+
+
+ */
+
+	
+
+   
+/*
+
+	document.write("Flávio tem  " + getIdade(1976) );
+    document.write("<br>");
+    document.write("Joaquim tem " + getIdade(1996));
+    document.write("<br>");
+    document.write("Barney tem " + getIdade(1976));
+
+*/
+
+
+    escreveIdade("Flávio",1976);    
+    escreveIdade("Joaquim",1996);    
+    escreveIdade("Barney", 1976);
+
+
+    function getIdade(anoNascimento){return new Date().getFullYear() - anoNascimento;}
+
+    function escreveIdade(nome, anoNascimento){
+
+    	document.write(nome + " tem " +  getIdade(anoNascimento) + " anos." );
+        document.write("<br>");
+        
+    }
+
+
+/* 
+  */
+	
+</script>
+

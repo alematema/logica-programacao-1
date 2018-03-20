@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+
+    var initTime = new Date().getTime();
+
+    alert("Vou dizer se eh possivel pagar postagens apenas com selos de 5 cents e 9 cents.")
+
+    var valorPostagemInicial = parseInt(prompt("entre valor inicial da postagem"));
+
+    var valorPostagemFinal =  parseInt(prompt("entre valor final da postagem")) ;
+
+    var multiplicadorDo5;
+    var multiplicadorDo9;
+
+    var valorPostagem = valorPostagemInicial;
+
+    initTime = new Date().getTime();
+
+    while(valorPostagem <= valorPostagemFinal){
+
+        multiplicadorDo5 = 0;
+        multiplicadorDo9 = 0;
+
+        var combinacaoTentada=0;
+
+        var contator = Math.round(valorPostagem / 5);
+
+        var ehPossivelPagarPostagemComSelosDe5EDe9 = false;
+
+        while(multiplicadorDo5 <= contator){
+
+
+            multiplicadorDo9 = 0;
+            combinacaoTentada = multiplicadorDo5*5 + multiplicadorDo9 * 9;
+
+            while(combinacaoTentada <= valorPostagem){
+
+               
+                combinacaoTentada = multiplicadorDo5*5 + multiplicadorDo9 * 9;
+
+                //mostra("combinacao tentata "  + multiplicadorDo5 + " selos de 5 e " + multiplicadorDo9 + " selos de 9" );
+
+                if(combinacaoTentada == valorPostagem){
+
+                    ehPossivelPagarPostagemComSelosDe5EDe9 = true;
+                    break;
+
+                }
+
+                multiplicadorDo9++;
+
+            }
+
+            if(ehPossivelPagarPostagemComSelosDe5EDe9) break;
+
+            multiplicadorDo5++;
+
+
+        }
+
+
+        if(ehPossivelPagarPostagemComSelosDe5EDe9){
+
+            mostra(valorPostagem + " = " + multiplicadorDo5 + " * 5  + " + multiplicadorDo9 + " * 9  &#9745" );
+
+        }else{
+
+//           mostra(valorPostagem + " = " + "&#8708 * 5  + " + "&#8708 * 9  &#9744" );
+           mostra(valorPostagem + " = " + "&#8708 * 5  + " + "&#8708 * 9  &#9746" );
+
+        }
+        
+
+        valorPostagem++;
+
+    }
+
+    
+
+    mostra("FIM " + " ("+ (new Date().getTime() - initTime)+ " miliseconds)");
+
+
+    
+    
+
+        
+</script>

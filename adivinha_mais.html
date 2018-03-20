@@ -1,0 +1,61 @@
+<meta charset="utf-8">
+
+<input autofocus onkeypress ="checkIfEnter(event);" />
+<button>Compare com meu segredo</button>
+
+<script>
+     
+    var segredo = 5;
+
+    var input = document.querySelector("input");
+
+
+    function verifica(){
+
+
+        if(input.value != ""){
+
+            if(input.value == segredo){
+
+                alert("VOCÊ ACERTOU !!!");
+
+            }else{
+
+                alert("VOCÊ ERROU !!!");
+
+            }
+
+            input.value = "";
+            
+
+        }else{
+
+             alert("Digite um número");
+             
+        }
+
+        input.focus();
+
+
+    }
+
+    function checkIfEnter(event){
+        
+
+        if(event.key == "Enter"){
+
+            verifica();
+            
+
+        }
+        
+
+    }
+
+    var button = document.querySelector("button");
+
+    button.onclick = verifica;
+
+    
+
+</script>

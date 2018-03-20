@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+
+<script>
+	
+/*	
+	var combustivel = "gasolina";
+	var distanciaPercorrida = 480;
+	var litrosGastos = 40;
+
+	var consumo = distanciaPercorrida / litrosGastos;
+
+
+	document.write("<h1>Foi percorrida uma distância de  " + distanciaPercorrida + " Km, e foram gastos  " + litrosGastos + " litros de " + combustivel + ".<br>");
+	document.write("O consumo de " + combustivel + " foi de " + consumo + " Km por litro.</h1>");
+
+
+
+	combustivel = "alcool";
+	distanciaPercorrida = 300;
+	litrosGastos = 40;
+
+	consumo = distanciaPercorrida / litrosGastos;
+
+
+	document.write("<h1>Foi percorrida uma distância de  " + distanciaPercorrida + " Km, e foram gastos  " + litrosGastos + " litros de " + combustivel + ".<br>");
+	document.write("O consumo de " + combustivel + " foi de " + consumo + " Km por litro.</h1>");
+
+	*/
+
+
+	document.write("<h3>Álcool ou Gasolina?</h3>");
+
+	calcularEscreverConsumoCombustivel("gasolina", 480, 40);
+	calcularEscreverConsumoCombustivel("alcool", 300, 40);
+	calcularEscreverConsumoCombustivel("albumina", 300, 40);
+
+
+	function calcularEscreverConsumoCombustivel(combustivel, distanciaPercorrida, litrosGastos){
+
+
+		if((combustivel !== "gasolina") && (combustivel !== "alcool")){
+
+			document.write("<br><br> <h2> COMBUSTÍVEL PASSADO " + combustivel + " NÃO CADASTRADO </h2>" ) ;
+			return;
+
+		} 
+
+		document.write("<h1>  Foi percorrida uma distância de  " + distanciaPercorrida + " Km, e foram gastos  " + litrosGastos + " litros de " + combustivel + ".<br>");
+
+		consumo = distanciaPercorrida / litrosGastos;
+
+		document.write("O consumo de " + combustivel + " foi de " + consumo + " Km por litro.</h1>");
+
+	}
+
+
+</script>
+

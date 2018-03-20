@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+
+
+    var vitorias = parseInt(prompt("Digitar o número de vitórias."));
+    var empates = parseInt(prompt("Digitar o número de empates."));
+
+
+    if( isNaN(vitorias) || isNaN(empates) ){
+
+        mostra("Vitórias e/ou pontos não computados!!!"); 
+        alert("Vitórias e/ou pontos não computados!!!");
+
+    } else {
+
+        var pontos = vitorias * 3 + empates;
+        mostra("Os total de pontos do seu time é " + pontos);
+
+    }
+
+    var totalPontosAnoPassado = 28;
+
+    if(pontos > totalPontosAnoPassado)mostra("Seu time está MELHOR do que o ano passado.");
+    if(pontos < totalPontosAnoPassado)mostra("Seu time está PIOR do que o ano passado.");
+    if(pontos == totalPontosAnoPassado)mostra("Seu time está IGUAL do que o ano passado.");
+    
+
+        
+</script>

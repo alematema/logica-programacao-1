@@ -1,0 +1,112 @@
+<meta charset="utf-8">
+<script>
+
+    function pulaLinha() {
+        document.write("<br><br>");
+    }
+
+    function mostra(texto){
+
+        if(texto == undefined) return;
+
+        document.write("<big>"+texto+"</big>");
+        pulaLinha();
+        
+    }
+  
+
+    function calculaImc(peso,altura){
+
+        var imc = peso/(altura*altura);
+
+        return imc;
+
+    }
+
+    function getMinimoImcCritico(){
+        
+
+        return 18.5;
+
+        if(20<=idade && idade<30) return 18;
+        if(30<=idade && idade<40) return 20;
+        if(40<=idade && idade<50) return 22;
+        if(50<=idade && idade<60) return 23;
+        if(60<=idade && idade<70) return 24;
+        if(70<=idade) return 26;
+
+    }
+
+    function getMaximoImcCritico(){
+
+        return 25.0;
+
+        if(20<=idade && idade<30) return 19.9;
+        if(30<=idade && idade<40) return 21.9;
+        if(40<=idade && idade<50) return 22.9;
+        if(50<=idade && idade<60) return 23.9;
+        if(60<=idade && idade<70) return 24.9;
+        if(70<=idade) return 27.9;
+
+    }
+
+    function getClassificacaoCorpo(imc){
+
+
+        if(imc < getMinimoImcCritico()) {
+            return "Excesso de Magreza";
+        }else if(imc < getMaximoImcCritico()){
+            return "Peso Normal";
+        }else if(imc < 30){
+            return "Excesso de Peso";
+        }else if(imc < 35){
+            return "Obesidade (Grau I)";
+        }else if(imc < 40){
+            return "Obesidade (Grau II)";
+        }else return "Obesidade (Grau III)"
+
+    }
+
+    var nome = prompt("Informe seu nome ");
+
+    //var idade = parseFloat(prompt(nome + ", qual sua idade ? "));
+    var pesoInformado   = parseFloat(prompt(nome + ", qual seu peso (Kg) ? ").replace(",","."));
+    var alturaInformada = parseFloat(prompt(nome + ", qual sua altura (m) ? ").replace(",","."));
+    
+
+    if( isNaN(pesoInformado) || isNaN(alturaInformada) ){
+
+        mostra(nome+", o IMC não foi calculado porque os dados informados não são APENAS números.");
+
+    } else {
+
+        var imc = calculaImc(pesoInformado,alturaInformada);
+
+
+        mostra("********** Análise IMC (índice Massa Corporal) do ser chamado " + nome +".");
+
+        mostra("**** Peso " + pesoInformado + " Kg.");
+        mostra("**** Altura " + alturaInformada + " m.");
+        mostra(nome + ", seu IMC é " + imc.toFixed(1) + " Kg/m2");
+
+
+        if( imc <= getMinimoImcCritico() ){
+            mostra(nome + ", seu índice de massa corporal está ABAIXO do esperado (" +getMinimoImcCritico().toFixed(1)+", "+ getClassificacaoCorpo(imc)+"). Alimente-se melhor.");
+            mostra("Seu peso ideal é entre " + (getMinimoImcCritico()*alturaInformada*alturaInformada).toFixed(2) + "Kg e " + (getMaximoImcCritico()*alturaInformada*alturaInformada).toFixed(2) + "Kg.")
+        } else if( imc <= getMaximoImcCritico() ){
+            mostra(nome + ", seu índice de massa corporal está OK (entre " +getMinimoImcCritico().toFixed(1)+" e "+ getMaximoImcCritico().toFixed(1)+", "+ getClassificacaoCorpo(imc)+"). Continue alimentado-se bem.");
+        } else {
+            mostra(nome + ", seu índice de massa corporal está ACIMA do esperado (" + getMaximoImcCritico().toFixed(1)+ ", "+ getClassificacaoCorpo(imc)+"). Alimente-se melhor. Faça mais exercicios e meditações.");
+            mostra("Seu peso ideal é entre " + (getMinimoImcCritico()*alturaInformada*alturaInformada).toFixed(2) + "Kg e " + (getMaximoImcCritico()*alturaInformada*alturaInformada).toFixed(2) + "Kg." )
+        }
+
+        mostra("**************************************************************************************");
+        
+
+    }
+
+    
+
+  
+        
+</script>

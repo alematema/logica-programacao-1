@@ -1,0 +1,69 @@
+<script language=javascript>
+var checkedAll = false;	
+function CheckToggle(){
+	for(var i=0;i<document.myForm.elements.length;i++){
+		
+		var e=document.myForm.elements[i]; 
+		
+		if(!checkedAll){
+
+			if(!e.checked){
+
+				e.checked=!e.checked;
+
+			}
+			
+		}else{
+
+			if(e.checked){
+
+				e.checked=!e.checked;
+
+			}
+
+		}	
+		
+	}
+
+	checkedAll = !checkedAll;
+
+	if(!checkedAll){
+		document.getElementById("submitBtn").value = "Select All";
+	}else{
+		document.getElementById("submitBtn").value = "Unselect All";
+	}
+}
+</script>
+<body>
+<form method="post" name="myForm">	
+<table align="center">
+	<tr>
+	<td width=88 height=20 onClick="javascript:CheckToggle()" STYLE='cursor:hand'><input id="submitBtn" type="button" name="Submit" value="Select All" /></td>	
+	<td width="252">PROGRAMMING:</td>	
+	</tr><tr>
+            <td height=20><input type="checkbox" name="checkbox1" ></td>
+	<td height=20>HTML</td>
+	</tr><tr>
+            <td height=20><input type="checkbox" name="checkbox2"></td>
+	<td height=20>J2EE</td>
+	</tr><tr>
+            <td height=20><input type="checkbox" name="checkbox3"></td>
+	<td height=20>ASP</td>
+	</tr><tr>
+	  <td height=20><input type="checkbox" name="checkbox4" /></td>
+	  <td height=20>PHP</td>
+    </tr><tr>
+	  <td height=20><input type="checkbox" name="checkbox5" /></td>
+	  <td height=20>JSP</td>
+    </tr><tr>
+	  <td height=20><input type="checkbox" name="checkbox6" /></td>
+	  <td height=20>VB</td>
+    </tr><tr>
+	  <td height=20><input type="checkbox" name="checkbox7"/></td>
+	  <td height=20>C#</td>
+    </tr>
+</table>
+<div align="center"></div>
+<div align="center"></div>
+</form>	
+</body>
